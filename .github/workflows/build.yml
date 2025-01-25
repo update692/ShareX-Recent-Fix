@@ -25,9 +25,6 @@ jobs:
         configuration:
           - Release
           - Debug
-          - Steam
-          - MicrosoftStore
-          - MicrosoftStoreDebug
         platform:
           - Any CPU
 
@@ -101,27 +98,6 @@ jobs:
           name: Debug
           path: Output\ShareX-${{ env.APP_VERSION }}-debug.zip
 
-      - name: Upload artifact (Steam)
-        if: matrix.configuration == 'Steam'
-        uses: actions/upload-artifact@v4
-        with:
-          name: Steam
-          path: Output\ShareX-${{ env.APP_VERSION }}-Steam.zip
-
-      - name: Upload artifact (MicrosoftStore)
-        if: matrix.configuration == 'MicrosoftStore'
-        uses: actions/upload-artifact@v4
-        with:
-          name: MicrosoftStore
-          path: Output\ShareX-${{ env.APP_VERSION }}.appx
-
-      - name: Upload artifact (MicrosoftStoreDebug)
-        if: matrix.configuration == 'MicrosoftStoreDebug'
-        uses: actions/upload-artifact@v4
-        with:
-          name: MicrosoftStoreDebug
-          path: Output\ShareX-${{ env.APP_VERSION }}-debug.appx
-
   release:
     name: Release
     needs: build
@@ -132,7 +108,6 @@ jobs:
       contents: write
 
     env:
-      REPO_DEV_BUILDS: ${{ github.repository_owner }}/DevBuilds
       RELEASE_BODY_PATH: RELEASE_BODY.md
       APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
 
@@ -156,27 +131,6 @@ jobs:
           name: Debug
           path: Output
 
-      - name: Download artifact (Steam)
-        if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v4
-        with:
-          name: Steam
-          path: Output
-
-      - name: Download artifact (MicrosoftStore)
-        if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v4
-        with:
-          name: MicrosoftStore
-          path: Output
-
-      - name: Download artifact (MicrosoftStoreDebug)
-        if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v4
-        with:
-          name: MicrosoftStoreDebug
-          path: Output
-
       - name: Create release body file
         run: |
           $checksums = Get-ChildItem -Path "Output\" -Recurse -File
@@ -192,13 +146,9 @@ jobs:
           Set-Content -Path "${{ env.RELEASE_BODY_PATH }}" -Value "$output" -NoNewline
 
       - name: Release (Dev)
-        env:
-          CUSTOM_GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
-        if: env.CUSTOM_GITHUB_TOKEN != '' && env.REPO_DEV_BUILDS != '' && github.ref == 'refs/heads/develop'
         uses: softprops/action-gh-release@975c1b265e11dd76618af1c374e7981f9a6ff44a
         with:
-          repository: ${{ env.REPO_DEV_BUILDS }}
-          token: ${{ env.CUSTOM_GITHUB_TOKEN }}
+          token: "${{ secrets.GITHUB_TOKEN }}"
           tag_name: v${{ env.APP_VERSION }}
           name: ShareX ${{ env.APP_VERSION }} Dev
           body_path: ${{ env.RELEASE_BODY_PATH }}
@@ -208,23 +158,3 @@ jobs:
             Output/ShareX-${{ env.APP_VERSION }}-setup.exe
             Output/ShareX-${{ env.APP_VERSION }}-portable.zip
             Output/ShareX-${{ env.APP_VERSION }}-debug.zip
-            Output/ShareX-${{ env.APP_VERSION }}-Steam.zip
-            Output/ShareX-${{ env.APP_VERSION }}.appx
-            Output/ShareX-${{ env.APP_VERSION }}-debug.appx
-
-      - name: Release (Stable)
-        env:
-          CUSTOM_GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
-        if: env.CUSTOM_GITHUB_TOKEN != '' && startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@975c1b265e11dd76618af1c374e7981f9a6ff44a
-        with:
-          repository: ${{ github.repository }}
-          token: ${{ env.CUSTOM_GITHUB_TOKEN }}
-          tag_name: ${{ github.ref_name }}
-          name: ShareX ${{ env.APP_VERSION }}
-          body_path: ${{ env.RELEASE_BODY_PATH }}
-          draft: false
-          prerelease: true
-          files: |
-            Output/ShareX-${{ env.APP_VERSION }}-setup.exe
-            Output/ShareX-${{ env.APP_VERSION }}-portable.zip
