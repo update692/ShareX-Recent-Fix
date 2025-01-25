@@ -92,6 +92,8 @@ namespace ShareX
 
                 TaskThumbnailView.RemovePanel(task);
 
+                RecentManager.Remove(task);
+
                 task.Dispose();
             }
         }

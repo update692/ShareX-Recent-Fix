@@ -110,6 +110,55 @@ namespace ShareX
             }
         }
 
+        public void Remove(WorkerTask task)
+        {
+            string info = task.Info.ToString();
+
+            if (!string.IsNullOrEmpty(info))
+            {
+                lock (itemsLock)
+                {
+                    foreach (var item in Tasks)
+                    {
+                        if (item.FilePath == task.Info.FilePath &&
+                            item.URL == task.Info.Result.URL &&
+                            item.ThumbnailURL == task.Info.Result.ThumbnailURL &&
+                            item.DeletionURL == task.Info.Result.DeletionURL &&
+                            item.ShortenedURL == task.Info.Result.ShortenedURL)
+                        {
+                            Remove(item);
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (Program.Settings.RecentTasksSave)
+            {
+                Program.Settings.RecentTasks = Tasks.ToArray();
+            }
+            else
+            {
+                Program.Settings.RecentTasks = null;
+            }
+        }
+
+        public void Remove(RecentTask task)
+        {
+            var temp = new Queue<RecentTask>();
+            foreach (var item in Tasks)
+            {
+                if (item != task)
+                {
+                    temp.Enqueue(item);
+                }
+            }
+            Tasks.Clear();
+            Tasks = temp;
+
+            UpdateTrayMenu();
+        }
+
         public void Add(RecentTask task)
         {
             lock (itemsLock)
