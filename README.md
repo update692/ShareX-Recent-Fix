@@ -1,4 +1,4 @@
-# ShareX-Recent-Fix
+# ShareX Recent Fix
 
 Fixed deletion of recent tasks in ShareX.\
 Download: https://github.com/update692/ShareX-Recent-Fix/releases
