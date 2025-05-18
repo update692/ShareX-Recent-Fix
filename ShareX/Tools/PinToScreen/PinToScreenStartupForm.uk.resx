@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,33 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Изменение DNS</value>
+    <value>ShareX — Закріпити на екрані</value>
+  </data>
+  <data name="btnFromFile.Text" xml:space="preserve">
+    <value>Закріпити на екрані з файлу...</value>
+  </data>
+  <data name="btnFromScreen.Text" xml:space="preserve">
+    <value>Закріпити на екрані з екрану...</value>
+  </data>
+  <data name="btnFromClipboard.Text" xml:space="preserve">
+    <value>Закріпити на екрані з буферу обміну</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>Закрыть</value>
-  </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Применить</value>
-  </data>
-  <data name="cbAutomatic.Text" xml:space="preserve">
-    <value>Получить адрес сервера DNS автоматически</value>
-  </data>
-  <data name="lblAdapters.Text" xml:space="preserve">
-    <value>Сетевые адаптеры:</value>
-  </data>
-  <data name="lblAlternateDNS.Text" xml:space="preserve">
-    <value>Альтернативный DNS:</value>
-  </data>
-  <data name="lblDNS.Text" xml:space="preserve">
-    <value>Серверы DNS:</value>
-  </data>
-  <data name="lblPreferredDNS.Text" xml:space="preserve">
-    <value>Предпочтительный DNS:</value>
-  </data>
-  <data name="btnPingPrimary.Text" xml:space="preserve">
-    <value>Пинг</value>
-  </data>
-  <data name="btnPingSecondary.Text" xml:space="preserve">
-    <value>Пинг</value>
+    <value>Скасувати</value>
   </data>
 </root>

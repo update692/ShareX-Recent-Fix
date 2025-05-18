@@ -117,34 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>Zamknij</value>
+    <value>Скасувати</value>
   </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Zastosuj</value>
+  <data name="lblScrollDelayHint.Text" xml:space="preserve">
+    <value>мс</value>
   </data>
-  <data name="btnPingPrimary.Text" xml:space="preserve">
-    <value>Ping</value>
-  </data>
-  <data name="btnPingSecondary.Text" xml:space="preserve">
-    <value>Ping</value>
+  <data name="lblStartDelayHint.Text" xml:space="preserve">
+    <value>мс</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Zmiana DNS</value>
+    <value>ShareX — Налаштування захоплення з прокручуванням</value>
   </data>
-  <data name="cbAutomatic.Text" xml:space="preserve">
-    <value>Uzyskaj adres serwera DNS automatycznie</value>
+  <data name="lblScrollAmountHint.Text" xml:space="preserve">
+    <value>разів</value>
   </data>
-  <data name="lblAdapters.Text" xml:space="preserve">
-    <value>Karty sieciowe:</value>
+  <data name="cbAutoIgnoreBottomEdge.Text" xml:space="preserve">
+    <value>Автоматично ігнорувати нижній край</value>
   </data>
-  <data name="lblAlternateDNS.Text" xml:space="preserve">
-    <value>Alternatywny serwer DNS:</value>
+  <data name="cbAutoScrollTop.Text" xml:space="preserve">
+    <value>Автоматично прокручувати вгору</value>
   </data>
-  <data name="lblDNS.Text" xml:space="preserve">
-    <value>Serwery DNS:</value>
+  <data name="cbAutoUpload.Text" xml:space="preserve">
+    <value>Автоматично завантажити / зберегти</value>
   </data>
-  <data name="lblPreferredDNS.Text" xml:space="preserve">
-    <value>Preferowany serwer DNS:</value>
+  <data name="cbShowRegion.Text" xml:space="preserve">
+    <value>Показати область захоплення з прокручуванням</value>
+  </data>
+  <data name="lblScrollAmount.Text" xml:space="preserve">
+    <value>Кількість прокручувань:</value>
+  </data>
+  <data name="lblScrollDelay.Text" xml:space="preserve">
+    <value>Затримка прокручування:</value>
+  </data>
+  <data name="lblStartDelay.Text" xml:space="preserve">
+    <value>Затримка перед стартом:</value>
   </data>
 </root>

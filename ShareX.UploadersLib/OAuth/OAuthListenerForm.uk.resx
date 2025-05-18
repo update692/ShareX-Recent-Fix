@@ -118,33 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - משנה DNS</value>
+    <value>ShareX — Авторизація</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>סגור</value>
+    <value>Скасувати</value>
   </data>
-  <data name="btnPingPrimary.Text" xml:space="preserve">
-    <value>פינג</value>
-  </data>
-  <data name="btnPingSecondary.Text" xml:space="preserve">
-    <value>פינג</value>
-  </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>החל</value>
-  </data>
-  <data name="cbAutomatic.Text" xml:space="preserve">
-    <value>השג כתובת שרת DNS באופן אוטומטי</value>
-  </data>
-  <data name="lblAdapters.Text" xml:space="preserve">
-    <value>מתאמי רשת:</value>
-  </data>
-  <data name="lblAlternateDNS.Text" xml:space="preserve">
-    <value>שרת DNS חלופי:</value>
-  </data>
-  <data name="lblDNS.Text" xml:space="preserve">
-    <value>שרתי DNS:</value>
-  </data>
-  <data name="lblPreferredDNS.Text" xml:space="preserve">
-    <value>שרת DNS מועדף:</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Чекаємо завершення авторизації у вашому браузері...</value>
   </data>
 </root>

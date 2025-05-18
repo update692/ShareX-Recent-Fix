@@ -117,34 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblAdapters.Text" xml:space="preserve">
-    <value>Adaptoare de rețea:</value>
-  </data>
-  <data name="lblPreferredDNS.Text" xml:space="preserve">
-    <value>Server DNS preferat:</value>
-  </data>
-  <data name="lblAlternateDNS.Text" xml:space="preserve">
-    <value>Server DNS alternativ:</value>
-  </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Aplicați</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Închideți</value>
-  </data>
-  <data name="lblDNS.Text" xml:space="preserve">
-    <value>Servere DNS:</value>
-  </data>
-  <data name="cbAutomatic.Text" xml:space="preserve">
-    <value>Obțineți adresa serverului DNS automat</value>
-  </data>
-  <data name="btnPingPrimary.Text" xml:space="preserve">
-    <value>Ping</value>
-  </data>
-  <data name="btnPingSecondary.Text" xml:space="preserve">
-    <value>Ping</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Schimbător DNS</value>
+    <value>ShareX — Попередження про перше вивантаження</value>
+  </data>
+  <data name="btnNo.Text" xml:space="preserve">
+    <value>Ні</value>
+  </data>
+  <data name="btnYes.Text" xml:space="preserve">
+    <value>Так</value>
+  </data>
+  <data name="lblHeader.Text" xml:space="preserve">
+    <value>Увага!</value>
+  </data>
+  <data name="lblInfo.Text" xml:space="preserve">
+    <value>Ви хочете, щоб ShareX вивантажував скріншоти?
+
+Натисніть "Ні", щоб скасувати поточне завантаження і вимкнути автоматичне вивантаження скріншотів.</value>
   </data>
 </root>
