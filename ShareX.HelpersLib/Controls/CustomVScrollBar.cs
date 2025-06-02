@@ -127,7 +127,7 @@ namespace ShareX.HelpersLib
         {
             base.OnPaint(e);
 
-            using (SolidBrush trackBrush = new SolidBrush(ShareXResources.Theme.DarkBackgroundColor))
+            using (SolidBrush trackBrush = new SolidBrush(ShareXResources.Theme.IsDarkTheme ? ShareXResources.Theme.DarkBackgroundColor : ShareXResources.Theme.LightBackgroundColor))
             {
                 e.Graphics.FillRectangle(trackBrush, ClientRectangle);
             }
@@ -144,7 +144,7 @@ namespace ShareX.HelpersLib
             int thumbTop = effectiveMaximum > 0 ? movementRange * Value / effectiveMaximum : 0;
             Rectangle thumbRect = new Rectangle(0, thumbTop, ClientRectangle.Width, thumbHeight);
 
-            Color thumbColor = isThumbHovered ? ColorHelpers.LighterColor(ShareXResources.Theme.LightBackgroundColor, 0.1f) : ShareXResources.Theme.LightBackgroundColor;
+            Color thumbColor = isThumbHovered ? ShareXResources.Theme.IsDarkTheme ? ColorHelpers.LighterColor(ShareXResources.Theme.LightBackgroundColor, 0.1f) : ColorHelpers.DarkerColor(ShareXResources.Theme.LightBackgroundColor, 0.4f) : ShareXResources.Theme.IsDarkTheme ? ShareXResources.Theme.LightBackgroundColor : ColorHelpers.DarkerColor(ShareXResources.Theme.DarkBackgroundColor, 0.2f);
             using (SolidBrush thumbBrush = new SolidBrush(thumbColor))
             {
                 e.Graphics.FillRectangle(thumbBrush, thumbRect);
