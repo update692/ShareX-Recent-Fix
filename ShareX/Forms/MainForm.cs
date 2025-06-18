@@ -1268,6 +1268,15 @@ namespace ShareX
             Refresh();
         }
 
+        private void MainForm_VisibleChanged(object sender, EventArgs e)
+        {
+            if (Visible && !CaptureHelpers.GetScreenBounds().IntersectsWith(Bounds))
+            {
+                Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
+                Location = new Point((activeScreen.Width - Size.Width) / 2, (activeScreen.Height - Size.Height) / 2);
+            }
+        }
+
         private void MainForm_LocationChanged(object sender, EventArgs e)
         {
             if (IsReady && WindowState == FormWindowState.Normal)
@@ -1829,16 +1838,6 @@ namespace ShareX
             UpdateDestinationStates();
         }
 
-        private void tsmiDestinationSettings_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenUploadersConfigWindow();
-        }
-
-        private void tsmiCustomUploaderSettings_Click(object sender, EventArgs e)
-        {
-            TaskHelpers.OpenCustomUploaderSettingsWindow();
-        }
-
         private void tsbApplicationSettings_Click(object sender, EventArgs e)
         {
             using (ApplicationSettingsForm settingsForm = new ApplicationSettingsForm())
@@ -1883,6 +1882,16 @@ namespace ShareX
                     SettingManager.SaveHotkeysConfigAsync();
                 }
             }
+        }
+
+        private void tsbDestinationSettings_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenUploadersConfigWindow();
+        }
+
+        private void tsbCustomUploaderSettings_Click(object sender, EventArgs e)
+        {
+            TaskHelpers.OpenCustomUploaderSettingsWindow();
         }
 
         private void tsbScreenshotsFolder_Click(object sender, EventArgs e)
